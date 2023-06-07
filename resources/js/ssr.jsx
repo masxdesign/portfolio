@@ -1,4 +1,3 @@
-import React from "react"
 import ReactDOMServer from 'react-dom/server';
 import { createInertiaApp } from '@inertiajs/react';
 import createServer from '@inertiajs/react/server';
@@ -20,7 +19,7 @@ createServer((page) =>
                     location: new URL(page.props.ziggy.location),
                 });
 
-            return React.createElement(App, {...props})
+            return <App {...props} />;
         },
     })
 );
