@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    return view('Welcome');
+    return view('Welcome'); 
 });
 
 Route::get('/dashboard', function () {
