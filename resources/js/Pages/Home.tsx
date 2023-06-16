@@ -6,7 +6,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
         <>
             <Head title="Welcome" />
             <div className="container mx-auto px-6 p-10">
-                <h1 className="text-center text-gray-800 mb-8">Masxdesign</h1>
+                <h1 className="text-center text-gray-800 mb-8">Masxdesignnn</h1>
                 <p className="text-base">ffdfkjfdf</p>
                 <a href={route('dashboard')}>Dashboard</a>
                 <div className="flex flex-wrap">

@@ -6,8 +6,11 @@
         "npm": "9.5.1"
     },
     "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build && vite build --ssr"
+        "dev": "npm run dev:sail && npm run dev:vite",
+        "dev:sail": "sail up",
+        "dev:vite": "vite",
+        "build": "tsc && vite build && vite build --ssr",
+        "deploy": "git push heroku main"
     },
     "dependencies": {
         "react": "^18.2.0",
