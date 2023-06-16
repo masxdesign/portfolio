@@ -1,6 +1,7 @@
+import { PageProps } from '@/types';
 import { Link, Head } from '@inertiajs/react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
+export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
     return (
         <>
             <Head title="Welcome" />
@@ -10,7 +11,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 <a href={route('dashboard')}>Dashboard</a>
                 <div className="flex flex-wrap">
                     <div className="w-full sm:w-1/2 text-white rounded-md p-3 bg-gradient-to-r from-cyan-500 to-blue-500">
-                        <h2>ffjf</h2>
+                        <h2>sadsdsada</h2>
                         fff
                     </div>
                     <div className='w-full sm:w-1/2 bg-gray-200'>
