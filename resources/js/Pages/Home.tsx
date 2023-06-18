@@ -1,24 +1,24 @@
+import SiteLayout from '@/Layouts/SiteLayout';
 import { PageProps } from '@/types';
-import { Link, Head } from '@inertiajs/react';
+import React from 'react';
 
-export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
+const Home = ({ auth }: PageProps) => {
     return (
         <>
-            <Head title="Welcome" />
-            <div className="container mx-auto px-6 p-10">
-                <h1 className="text-center text-gray-800 mb-8">Masxdesignnn</h1>
-                <p className="text-base">ffdfkjfdf</p>
-                <a href={route('dashboard')}>Dashboard</a>
-                <div className="flex flex-wrap">
-                    <div className="w-full sm:w-1/2 text-white rounded-md p-3 bg-gradient-to-r from-cyan-500 to-blue-500">
-                        <h2>sadsdsada</h2>
-                        fff
-                    </div>
-                    <div className='w-full sm:w-1/2 bg-gray-200'>
-                        dksfdjfjd
-                    </div>
-                </div>
+            <div className="flex bg-blue-800 bg-hero-pattern h-[600px]">
+            </div>
+            <div className="border-white border-4 bg-blue-200 p-4 rounded-xl -mt-16 shadow-lg mx-auto max-w-[700px]">
+                <h1 className="text-gray-800 text-2xl font-bold">
+                    We Develop Software that Inspire
+                </h1>
+                <p>
+                    Everyone is trying to run an online business nowadays that's because there are many benefits to it.
+                </p>
             </div>
         </>
     );
 }
+
+Home.layout = (page: React.ReactNode) => <SiteLayout children={page} title="Welcome" />
+
+export default Home

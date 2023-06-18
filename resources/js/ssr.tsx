@@ -1,8 +1,8 @@
 import ReactDOMServer from 'react-dom/server';
 import { createInertiaApp } from '@inertiajs/react';
 import createServer from '@inertiajs/react/server';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import route from '../../vendor/tightenco/ziggy/dist/index.m';
+import SiteLayout from './Layouts/SiteLayout';
 
 const appName = 'Laravel';
 
@@ -11,7 +11,15 @@ createServer((page) =>
         page,
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
-        resolve: (name) => resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx')),
+        resolve: (name) => {
+            const pages = import.meta.glob('./Pages/**/*.tsx', { eager: true })
+            let page = pages[`./Pages/${name}.tsx`]
+            
+            // @ts-expect-error
+            page.default.layout = page.default.layout || ((page) => <SiteLayout children={page} title="Welcome" />)
+            
+            return page
+        },
         setup: ({ App, props }) => {
             global.route = (name, params, absolute) =>
                 route(name, params, absolute, {

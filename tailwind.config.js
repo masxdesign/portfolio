@@ -13,8 +13,11 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
             },
+            backgroundImage: {
+                'hero-pattern': "url('/images/overlapping-hexagons.svg')",
+            }
         },
     },
 
