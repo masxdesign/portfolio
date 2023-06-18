@@ -13,7 +13,7 @@ createServer((page) =>
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
         resolve: async (name) => {
-            let page = resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
+            let page = await resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
     
             // @ts-expect-error
             page.default.layout = page.default.layout || ((page) => <SiteLayout children={page} title="Welcome" />)
