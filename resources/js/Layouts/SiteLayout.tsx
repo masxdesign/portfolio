@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react"
 
 type Props = {
     title: string
-}
+} 
 
 const SiteLayout = ({ children, title }: PropsWithChildren<Props>) => (
     <>
