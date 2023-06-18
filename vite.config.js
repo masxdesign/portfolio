@@ -11,4 +11,9 @@ export default defineConfig({
         }),
         react(),
     ],
+    test: {
+        globals: true,
+        environment: 'happy-dom',
+        setupFiles: "setupTests.js"
+    }
 });
