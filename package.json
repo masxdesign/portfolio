@@ -9,7 +9,7 @@
         "dev": "npm run dev:sail && npm run dev:vite",
         "dev:sail": "vendor/bin/sail up -d",
         "dev:vite": "vite",
-        "build": "tsc && vite build && vite build --ssr",
+        "build": "vite build && vite build --ssr",
         "deploy": "git push heroku main"
     },
     "dependencies": {
