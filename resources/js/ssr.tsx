@@ -16,7 +16,7 @@ createServer((page) =>
             let page = await resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
     
             // @ts-expect-error
-            page.default.layout = page.default.layout || ((page) => <SiteLayout children={page} title="Welcome" />)
+            // page.default.layout = page.default.layout || ((page) => <SiteLayout children={page} title="Welcome" />)
             
             return page
         },
