@@ -7,14 +7,16 @@ const Home = ({ auth }: PageProps) => {
         <>
             {/* <div className="flex bg-amber-300 h-[600px]">
             </div> */}
-            {/* <div className="bg-sky-900 p-6 rounded-sm -mt-16 shadow-lg mx-auto max-w-[700px]">
-                <h1 className="text-white text-4xl font-bold mb-3">
-                    We Develop Software that Inspire
-                </h1>
-                <p className='text-amber-200'>
-                    Everyone is trying to run an online business nowadays that's because there are many benefits to it.
-                </p>
-            </div> */}
+            <div className="max-w-7xl mx-auto bg-sky-900 p-16 rounded-lg shadow-lg">
+                <div className="max-w-md pt-32">
+                    <h1 className="text-white text-8xl font-bold mb-3">
+                        We Develop Software that Inspire
+                    </h1>
+                    <p className='text-amber-200'>
+                        Everyone is trying to run an online business nowadays that's because there are many benefits to it.
+                    </p>
+                </div>
+            </div>
         </>
     );
 }

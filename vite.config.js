@@ -15,5 +15,10 @@ export default defineConfig({
         globals: true,
         environment: 'happy-dom',
         setupFiles: "setupTests.js"
-    }
+    },
+    resolve: {
+        alias: {
+            ziggy: 'vendor/tightenco/ziggy/dist/index.m.js',
+        },
+    },
 });

@@ -1,9 +1,10 @@
 import ReactDOMServer from 'react-dom/server';
 import { createInertiaApp } from '@inertiajs/react';
 import createServer from '@inertiajs/react/server';
-import route from '../../vendor/tightenco/ziggy/dist/index.m';
+// @ts-expect-error
+import route from 'ziggy';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-// import SiteLayout from './Layouts/SiteLayout';
+import SiteLayout from './Layouts/SiteLayout';
 
 const appName = 'Laravel';
 
