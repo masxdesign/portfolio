@@ -3,7 +3,7 @@ import { createInertiaApp } from '@inertiajs/react';
 import createServer from '@inertiajs/react/server';
 // @ts-expect-error
 import route from 'ziggy';
-import { inertiaAppResolver } from './app';
+import inertiaAppResolver from './utilities/inertiaAppResolver';
 
 const appName = 'Laravel';
 

@@ -3,19 +3,9 @@ import '../css/app.css'
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
-import SiteLayout from './Layouts/SiteLayout';
+import inertiaAppResolver from './utilities/inertiaAppResolver';
 
-const appName = window?.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
-
-export const inertiaAppResolver = async (name: string) => {
-    let page = await resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
-
-    // @ts-expect-error
-    page.default.layout = page.default.layout || ((page) => <SiteLayout children={page} title="Welcome" />)
-    
-    return page
-}
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
     title:  (title) => `${title} - ${appName}`,
