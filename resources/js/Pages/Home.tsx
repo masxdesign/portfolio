@@ -5,16 +5,16 @@ import React from 'react';
 const Home = ({ auth }: PageProps) => {
     return (
         <>
-            {/* <div className="flex bg-amber-300 h-[600px]">
-            </div> */}
-            <div className="max-w-7xl mx-auto bg-sky-900 p-16 rounded-lg shadow-lg">
-                <div className="max-w-md pt-32">
-                    <h1 className="text-white text-8xl font-bold mb-3">
-                        We Develop Software that Inspire
-                    </h1>
-                    <p className='text-amber-200'>
-                        Everyone is trying to run an online business nowadays that's because there are many benefits to it.
-                    </p>
+            <div className="rounded-lg shadow-lg max-w-7xl mx-auto overflow-hidden">
+                <div className="bg-sky-900 p-16">
+                    <div className="max-w-lg pt-16">
+                        <h1 className="text-white text-4xl font-bold mb-3">
+                            We Develop Software that Inspire
+                        </h1>
+                        <p className='text-amber-200'>
+                            Everyone is trying to run an online business nowadays that's because there are many benefits to it.
+                        </p>
+                    </div>
                 </div>
             </div>
         </>

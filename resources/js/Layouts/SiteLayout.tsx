@@ -9,34 +9,29 @@ type Props = {
 const links = [
     ['Home', 'home'],
     ['About', 'dashboard'],
-    // ['Works', 'work'],
-    // ['Contact', 'contact'],
+    ['Works', 'dashboard'],
+    ['Contact', 'dashboard'],
 ]
 
 const SiteLayout = ({ children, title }: PropsWithChildren<Props>) => (
     <>
         <Head title={title} />
-        <div className="min-h-screen">
-            <div className="bg-gradient-to-r from-red-600 to-sky-700 h-1 font-bold text-lg shadow-xl">
-            </div>
-            <div className="w-100 bg-white mb-3">
-                <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-8">
-                    <div className="to-red-200 from-red-600 bg-gradient-to-r -mt-10">
-                        <Link href={route("home")} className="text-white text-md font-bold p-3">
-                            Masxdesign
-                        </Link>
-                    </div>
-                    <div className="flex text-gray-400 items-center">
-                        {links.map(([label, name]) => (
-                            <NavLink 
-                                key={label} 
-                                href={route(name)}
-                                active={route().current(name)}
-                            >
-                                {label}
-                            </NavLink> 
-                        ))}
-                    </div>
+        <div className="min-h-screen bg-gradient-to-b from-transparent to-slate-100">
+            <div className="bg-gradient-to-r from-red-600 to-sky-700 h-2 font-bold text-lg shadow-xl" />
+            <div className="max-w-7xl mx-auto flex items-center h-32 px-16">
+                <Link href={route("home")} className="text-slate-900 text-xl font-bold mr-32">
+                    Masxdesign
+                </Link>
+                <div className="flex text-gray-400 items-center">
+                    {links.map(([label, name]) => (
+                        <NavLink 
+                            key={label} 
+                            href={route(name)}
+                            active={route().current(name)}
+                        >
+                            {label}
+                        </NavLink> 
+                    ))}
                 </div>
             </div>
             {children}

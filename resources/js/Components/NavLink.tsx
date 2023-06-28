@@ -5,7 +5,7 @@ export default function NavLink({ active = false, className = '', children, ...p
     return (
         <Link
             {...props}
-            className={classNames("px-8 font-bold text-sm", { "text-red-500": active }, className)}
+            className={classNames("px-8 font-bold text-sm", { "text-red-600": active }, className)}
         >
             {children}
         </Link>
