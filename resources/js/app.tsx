@@ -6,7 +6,7 @@ import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import SiteLayout from './Layouts/SiteLayout';
 
-const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+const appName = window?.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 export const inertiaAppResolver = async (name: string) => {
     let page = await resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
