@@ -6,7 +6,7 @@
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
-        @vite('resources/css/app.css')
+        <!-- @vite('resources/css/app.css') -->
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
