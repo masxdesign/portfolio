@@ -14,7 +14,7 @@ createServer((page) =>
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
         resolve: async (name) => {
-            let page = await resolvePageComponent<{}>(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
+            const page = await resolvePageComponent<{}>(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
             return inertiaAppResolver(page)
         },
         setup: ({ App, props }) => {
