@@ -4,6 +4,7 @@ import createServer from '@inertiajs/react/server';
 // @ts-expect-error
 import route from 'ziggy';
 import inertiaAppResolver from './utilities/inertiaAppResolver';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 const appName = 'Laravel';
 
@@ -12,7 +13,10 @@ createServer((page) =>
         page,
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
-        resolve: inertiaAppResolver,
+        resolve: async (name) => {
+            let page = await resolvePageComponent<{}>(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx'))
+            return inertiaAppResolver(page)
+        },
         setup: ({ App, props }) => {
             global.route = (name, params, absolute) =>
                 route(name, params, absolute, {
